@@ -1,0 +1,245 @@
+dict
+
+
+1. Basic Dictionary Operations
+Exercise: Create a dictionary called student with the following key-value pairs:
+
+"name": "Alice"
+
+"age": 21
+
+"major": "Computer Science"
+
+Print the dictionary.
+
+Solution:
+
+python
+Copy
+student = {
+    "name": "Alice",
+    "age": 21,
+    "major": "Computer Science"
+}
+print(student)
+2. Accessing Dictionary Values
+Exercise: Given the dictionary student from Exercise 1, print the value associated with the key "major".
+
+Solution:
+
+python
+Copy
+print(student["major"])
+3. Updating Dictionary Values
+Exercise: Update the student dictionary to change the "age" to 22. Print the updated dictionary.
+
+Solution:
+
+python
+Copy
+student["age"] = 22
+print(student)
+4. Adding New Key-Value Pairs
+Exercise: Add a new key-value pair to the student dictionary:
+
+"year": "Junior"
+
+Print the updated dictionary.
+
+Solution:
+
+python
+Copy
+student["year"] = "Junior"
+print(student)
+5. Removing Key-Value Pairs
+Exercise: Remove the key "year" from the student dictionary. Print the updated dictionary.
+
+Solution:
+
+python
+Copy
+student.pop("year")
+print(student)
+6. Checking for Keys
+Exercise: Check if the key "major" exists in the student dictionary. Print True if it exists, otherwise print False.
+
+Solution:
+
+python
+Copy
+print("major" in student)
+7. Looping Through a Dictionary
+Exercise: Loop through the student dictionary and print each key-value pair in the format: Key: value.
+
+Solution:
+
+python
+Copy
+for key, value in student.items():
+    print(f"{key}: {value}")
+8. Dictionary Comprehension
+Exercise: Create a dictionary called squares where the keys are numbers from 1 to 5, and the values are the squares of those numbers. Use dictionary comprehension.
+
+Solution:
+
+python
+Copy
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)
+9. Merging Dictionaries
+Exercise: Merge two dictionaries dict1 and dict2 into a single dictionary. Print the merged dictionary.
+
+dict1 = {"a": 1, "b": 2}
+
+dict2 = {"c": 3, "d": 4}
+
+Solution:
+
+python
+Copy
+dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+merged_dict = {**dict1, **dict2}
+print(merged_dict)
+10. Nested Dictionaries
+Exercise: Create a nested dictionary called students with the following structure:
+
+"Alice": {"age": 21, "major": "Computer Science"}
+
+"Bob": {"age": 22, "major": "Mathematics"}
+
+Print the dictionary.
+
+Solution:
+
+python
+Copy
+students = {
+    "Alice": {"age": 21, "major": "Computer Science"},
+    "Bob": {"age": 22, "major": "Mathematics"}
+}
+print(students)
+11. Accessing Nested Dictionary Values
+Exercise: Given the students dictionary from Exercise 10, print the age of "Alice".
+
+Solution:
+
+python
+Copy
+print(students["Alice"]["age"])
+12. Updating Nested Dictionaries
+Exercise: Update the students dictionary to change Bob's major to "Physics". Print the updated dictionary.
+
+Solution:
+
+python
+Copy
+students["Bob"]["major"] = "Physics"
+print(students)
+13. Counting Occurrences
+Exercise: Given a list of words, create a dictionary where the keys are the words and the values are the number of times each word appears in the list.
+
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+Solution:
+
+python
+Copy
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+word_count = {}
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+print(word_count)
+14. Dictionary Sorting
+Exercise: Given a dictionary scores = {"Alice": 85, "Bob": 90, "Charlie": 78}, sort the dictionary by values in descending order and print the sorted dictionary.
+
+Solution:
+
+python
+Copy
+scores = {"Alice": 85, "Bob": 90, "Charlie": 78}
+sorted_scores = dict(sorted(scores.items(), key=lambda item: item[1], reverse=True))
+print(sorted_scores)
+15. Dictionary Filtering
+Exercise: Given a dictionary scores = {"Alice": 85, "Bob": 90, "Charlie": 78}, create a new dictionary containing only the key-value pairs where the value is greater than 80.
+
+Solution:
+
+python
+Copy
+scores = {"Alice": 85, "Bob": 90, "Charlie": 78}
+filtered_scores = {k: v for k, v in scores.items() if v > 80}
+print(filtered_scores)
+16. Dictionary Keys and Values
+Exercise: Given a dictionary scores = {"Alice": 85, "Bob": 90, "Charlie": 78}, print all the keys and values separately.
+
+Solution:
+
+python
+Copy
+scores = {"Alice": 85, "Bob": 90, "Charlie": 78}
+print("Keys:", scores.keys())
+print("Values:", scores.values())
+17. Dictionary from Two Lists
+Exercise: Given two lists keys = ["a", "b", "c"] and values = [1, 2, 3], create a dictionary where the elements of keys are the keys and the elements of values are the corresponding values.
+
+Solution:
+
+python
+Copy
+keys = ["a", "b", "c"]
+values = [1, 2, 3]
+dictionary = dict(zip(keys, values))
+print(dictionary)
+18. Dictionary of Lists
+Exercise: Create a dictionary where each key is a category (e.g., "fruits", "vegetables"), and the value is a list of items in that category.
+
+Solution:
+
+python
+Copy
+categories = {
+    "fruits": ["apple", "banana", "orange"],
+    "vegetables": ["carrot", "broccoli", "spinach"]
+}
+print(categories)
+19. Dictionary of Dictionaries
+Exercise: Create a dictionary where each key is a student name, and the value is another dictionary containing their age and grade.
+
+Solution:
+
+python
+Copy
+students = {
+    "Alice": {"age": 21, "grade": "A"},
+    "Bob": {"age": 22, "grade": "B"}
+}
+print(students)
+20. Flatten a Dictionary
+Exercise: Given a nested dictionary, flatten it into a single-level dictionary. For example:
+
+Input: {"a": 1, "b": {"c": 2, "d": 3}}
+
+Output: {"a": 1, "b_c": 2, "b_d": 3}
+
+Solution:
+
+python
+Copy
+def flatten_dict(d, parent_key="", sep="_"):
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+nested_dict = {"a": 1, "b": {"c": 2, "d": 3}}
+flattened = flatten_dict(nested_dict)
+print(flattened)
