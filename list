@@ -1,0 +1,76 @@
+'''
+1. List Creation & Basic Access
+2. Create a list of your five favorite fruits and print it.
+3. Print the first and last items from the list.
+4. Print a slice of the list that includes the 2nd to the 4th items (inclusive).
+5. Print every other fruit from the list (using slicing with a step).
+'''
+
+fruits = ["apple", "banana", "cherry", "date", "elderberry", "apple"]
+
+print(fruits)
+print(fruits[1], fruits[-1])
+
+print(fruits[1:4])
+
+print(fruits[::2])
+
+'''
+Modifying Lists (Insertion, Removal, Updating)
+Append a new fruit to the list.
+Insert a fruit at the second position in the list.
+Remove one fruit by name.
+Pop the last item in the list (and print which item was removed).
+Change the value of the third item in the list.
+
+'''
+print(fruits)
+fruits.insert(1, 'Guava')
+print(fruits)
+
+fruits.append('Cheery')
+print(fruits)
+
+fruits.remove('Guava')  ##here print will not give any value "pop" is exception
+print(fruits)
+
+print(fruits.pop())  ## stores what is popped
+print(fruits)
+
+fruits[2] = 'Mango'
+print(fruits)
+
+# Searching & Checking Membership
+# Given a list of integers, check if the number 10 exists in the list.
+
+'''
+numbers = [3, 10, 4, 10, 5, 10, 2]
+
+if numbers.count(10) > 1:
+
+    print('Present')
+else:
+    print('Not Present')
+'''
+# Print all the indices of the list where the element is 10.
+
+'''
+numbers = [5, 7, 8, 10, 10, 12]
+for i in range(len(numbers)):
+    if numbers[i] == 10:
+        print(i)
+
+    3.3 Count how many times the value 10 appears in the list.
+
+print(numbers.count(10))
+'''
+
+'''
+Create a list of random numbers (e.g., [5, 2, 9, 1, 5, 6]).
+Sort the list in ascending order.
+Sort the list in descending order.
+Reverse the list (without sorting).
+Print the minimum, maximum, and sum of the list.
+'''
+numbers = [5, 2, 9, 1, 5, 6]
+print(sorted(numbers))
