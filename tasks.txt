@@ -1,0 +1,37 @@
+Topics to go through
+
+
+List/Dict/set/tuple	
+FILE Io	
+Json Parsing	
+Loops 	
+Functions	
+Lambda/Map/Filter 	
+TRY Except	
+OOP	
+Decorator 	
+web scraping	
+OS modules	
+Regex	
+pip	
+*args and **kwargs	1
+Generators	1
+Flask	
+
+
+
+
+30 days	
+Grafana/Prometheus/Otel	1
+Splunk	1
+SQL	1
+	
+	
+Docker	2
+CKNA/CKA/CKAD/KCSA/CKS	
+	
+Terraform	3
+Ansible	3
+	
+AWS	2
+AZURE	2
