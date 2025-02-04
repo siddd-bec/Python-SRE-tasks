@@ -1,0 +1,181 @@
+'''
+Write a Python program to read the contents of a file named example.txt and print them to the console.
+'''
+# Open the file in read mode
+with open('example.txt', 'r') as file:
+    contents = file.read()
+    print(contents)
+'''
+Exercise 2: Write to a File
+Write a Python program to write the text "Hello, World!" to a file named output.txt.
+'''
+#
+# Open the file in write mode
+with open('output.txt', 'w') as file:
+    file.write("Hello, World!")
+'''
+Exercise 3: Append to a File
+Write a Python program to append the text "This is a new line." to an existing file named output.txt.
+'''
+# # Open the file in append mode
+with open('output.txt', 'a') as file:
+    file.write("\nThis is a new line.")
+'''
+Exercise 4: Read a File Line by Line
+Write a Python program to read a file named example.txt line by line and print each line.
+'''
+#
+# Open the file in read mode
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line, end='')  # end='' to avoid double spacing
+'''
+Exercise 5: Count the Number of Lines in a File
+Write a Python program to count the number of lines in a file named example.txt.
+'''
+
+# Open the file in read mode
+with open('example.txt', 'r') as file:
+    line_count = sum(1 for line in file)
+    print(f"Number of lines: {line_count}")
+'''
+
+Exercise 6: Copy a File
+Write a Python program to copy the contents of a file named source.txt to a new file named destination.txt.
+'''
+# Open the source file in read mode and destination file in write mode
+with open('source.txt', 'r') as source, open('destination.txt', 'w') as destination:
+    for line in source:
+        destination.write(line)
+'''
+Exercise 7: Count the Frequency of Words in a File
+
+
+'''
+
+# Open the file in read mode
+
+from collections import defaultdict
+with open('example.txt', 'r') as file:
+    word_count = defaultdict(int)
+    for line in file:
+        words = line.split()
+        for word in words:
+            word_count[word] += 1
+
+# Print word frequencies
+for word, count in word_count.items():
+    print(f"{word}: {count}")
+
+'''
+Exercise 8: Read and Write CSV Files
+Write a Python program to read a CSV file named data.csv and write its contents to a new CSV file named output.csv.
+'''
+
+import csv
+
+# Read from the input CSV file
+with open('data.csv', 'r') as infile:
+    reader = csv.reader(infile)
+    data = [row for row in reader]
+
+# Write to the output CSV file
+with open('output.csv', 'w', newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerows(data)
+# Exercise 9: Read a JSON File
+# Write a Python program to read a JSON file named data.json and print its contents.
+#
+# Solution:
+# python
+# Copy
+# import json
+#
+# # Open the JSON file in read mode
+# with open('data.json', 'r') as file:
+#     data = json.load(file)
+#     print(data)
+# Exercise 10: Write to a JSON File
+# Write a Python program to write a dictionary {"name": "Alice", "age": 30} to a JSON file named output.json.
+#
+# Solution:
+'''
+# Data to write
+data = {"name": "Alice", "age": 30}
+'''
+
+# Write to the JSON file
+with open('output.json', 'w') as file:
+    json.dump(data, file)
+# Exercise 11: Handle File Exceptions
+# Write a Python program to read a file named example.txt and handle the FileNotFoundError exception if the file does not exist.
+#
+'''
+# try:
+#     with open('example.txt', 'r') as file:
+#         contents = file.read()
+#         print(contents)
+# except FileNotFoundError:
+#     print("The file does not exist.")
+
+'''
+# Exercise 12: Read a Binary File
+# Write a Python program to read a binary file named image.jpg and write its contents to a new file named copy.jpg.
+#
+# Solution:
+# python
+# Copy
+# # Open the binary file in read mode and the new file in write mode
+# with open('image.jpg', 'rb') as source, open('copy.jpg', 'wb') as destination:
+#     destination.write(source.read())
+# Exercise 13: Search for a String in a File
+# Write a Python program to search for the string "Python" in a file named example.txt and print the line number and line content where it is found.
+#
+# Solution:
+# python
+# Copy
+# # Open the file in read mode
+# with open('example.txt', 'r') as file:
+#     for line_number, line in enumerate(file, start=1):
+#         if "Python" in line:
+#             print(f"Line {line_number}: {line.strip()}")
+# Exercise 14: Replace a String in a File
+# Write a Python program to replace all occurrences of the string "old" with "new" in a file named example.txt and save the changes to a new file named updated.txt.
+#
+# Solution:
+# python
+# Copy
+# # Open the input file in read mode and the output file in write mode
+# with open('example.txt', 'r') as infile, open('updated.txt', 'w') as outfile:
+#     for line in infile:
+#         updated_line = line.replace("old", "new")
+#         outfile.write(updated_line)
+# Exercise 15: Read and Write to a File Using with and as
+# Write a Python program to read a file named input.txt and write its contents in reverse order to a new file named output.txt.
+#
+# Solution:
+# python
+# Copy
+# # Open the input file in read mode and the output file in write mode
+# with open('input.txt', 'r') as infile, open('output.txt', 'w') as outfile:
+#     contents = infile.read()
+#     outfile.write(contents[::-1])
+# These exercises cover a wide range of file I/O operations in Python. Practice them to strengthen your understanding!
+#
+# New chat
+count = 0
+# with open('ab.txt', 'r') as file:
+#     for line in file:
+#         count +=1
+# print(count)
+#
+#
+# with open('example.txt', 'r') as file:
+#     line_count = sum(1 for line in file) ## new way
+#     print(f"Number of lines: {line_count}")
+
+
+with open('ab.txt', 'r') as source, with open('bc.txt', 'a') as dest:
+        for line in source
+            dest.write(line)
+print(dest)
