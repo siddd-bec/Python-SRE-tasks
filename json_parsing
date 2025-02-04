@@ -1,0 +1,251 @@
+'''
+Exercise 1: Basic JSON Parsing; Given the following JSON data:
+Write a Python script to:
+Extract and print the name and age.
+Check if is_employee is True and print a message accordingly.
+Print all the skills in the skills list.
+'''
+
+#json_data =
+#'''
+#{
+#   "name": "John Doe",
+#   "age": 30,
+#   "is_employee": true,
+#   "skills": ["Python", "Linux", "AWS"]
+# }
+#
+# '''
+##solution
+# import json
+# json_data = '''
+# {
+#   "name": "John Doe",
+#   "age": 30,
+#   "is_employee": true,
+#   "skills": ["Python", "Linux", "AWS"]
+# }
+#
+# '''
+#
+# data = json.loads(json_data)
+#
+# print(data)
+#
+# print(f"")
+'''
+
+'''
+# Exercise 2: Nested JSON Parsing; Given the following JSON data:
+
+# Print the company name.
+# Print the names and roles of all employees.#
+# Print the projects of the employee named "Alice".
+
+##solution
+# import json
+# json_data = '''
+# {
+#   "company": "Apple",
+#   "employees": [
+#     {
+#       "name": "Alice",
+#       "role": "SRE",
+#       "projects": ["Cloud", "Kubernetes"]
+#     },
+#     {
+#       "name": "Bob",
+#       "role": "Developer",
+#       "projects": ["iOS", "macOS"]
+#     }
+#   ]
+# }
+# '''
+#
+# data = json.loads(json_data)
+# print(data)
+#
+# print(data['company'])
+# print(data['employees'])
+# print(data['employees'][0]['projects'])
+#
+
+# Write a Python script to:
+#
+# Exercise 3: JSON Array Parsing; Given the following JSON data:
+#Write a Python script to:
+# Print the names and prices of all products.
+# Calculate and print the total price of all products.
+#
+# import json
+#
+# # Given JSON data
+# json_data = '''
+# [
+#   {
+#     "id": 1,
+#     "name": "Product A",
+#     "price": 29.99
+#   },
+#   {
+#     "id": 2,
+#     "name": "Product B",
+#     "price": 49.99
+#   }
+# ]
+# '''
+
+# Parse the JSON data
+# products = json.loads(json_data)
+# print(products)
+#
+# for product in products:
+#     print(f"id: {product['id']}, name: {product['name']}, price: {product['price']}")
+
+
+# Exercise 4: Filtering JSON Data; Given the following JSON data:
+## Write a Python script to:
+# Print the names of all servers that are online.
+# Count and print the number of servers located in the US.
+
+import json
+json_data = '''
+"servers": [
+    {
+      "name": "server1",
+      "status": "online",
+      "location": "US"
+    },
+    {
+      "name": "server2",
+      "status": "offline",
+      "location": "EU"
+    },
+    {
+      "name": "server3",
+      "status": "online",
+      "location": "US"
+    }
+  ]
+}
+'''
+
+servers_listed = json.loads(json_data)
+
+for server in servers_list['servers']:
+    if server['status'] == 'online':
+        print(f"{server['name'] } is {server['status'] }")
+
+count = 0
+for server in servers_list['servers']:
+    if server['location'] == 'US':
+        count += 1
+
+print(count)
+
+
+
+
+
+
+
+
+
+
+# Exercise 5: Complex JSON Parsing
+# Given the following JSON data:
+#
+# json
+# Copy
+# {
+#   "team": "SRE",
+#   "members": [
+#     {
+#       "name": "Charlie",
+#       "tasks": [
+#         {
+#           "task_name": "Monitor Servers",
+#           "status": "completed"
+#         },
+#         {
+#           "task_name": "Deploy Updates",
+#           "status": "pending"
+#         }
+#       ]
+#     },
+#     {
+#       "name": "Dana",
+#       "tasks": [
+#         {
+#           "task_name": "Fix Bugs",
+#           "status": "completed"
+#         },
+#         {
+#           "task_name": "Optimize Database",
+#           "status": "completed"
+#         }
+#       ]
+#     }
+#   ]
+# }
+# Write a Python script to:
+#
+# Print the team name.
+#
+# Print the names of all members and their tasks.
+#
+# Count and print the number of completed tasks for each member.
+#
+# Exercise 6: Error Handling in JSON Parsing
+# Given the following JSON data:
+#
+# json
+# Copy
+# {
+#   "name": "Eve",
+#   "age": "unknown",
+#   "skills": ["Python", "Docker", "Terraform"]
+# }
+# Write a Python script to:
+#
+# Safely parse the JSON and handle any potential errors (e.g., missing keys or invalid data types).
+#
+# Print the name and skills.
+#
+# If age is not a valid integer, print a default value like 0.
+#
+# Exercise 7: JSON Data Transformation
+# Given the following JSON data:
+#
+# json
+# Copy
+# {
+#   "data": [
+#     {
+#       "id": 101,
+#       "value": 200
+#     },
+#     {
+#       "id": 102,
+#       "value": 300
+#     },
+#     {
+#       "id": 103,
+#       "value": 400
+#     }
+#   ]
+# }
+# Write a Python script to:
+#
+# Transform the JSON into a dictionary where the id is the key and value is the value.
+#
+# Print the transformed dictionary.
+#
+# Bonus Exercise: Real-World JSON Parsing
+# Fetch JSON data from a public API (e.g., https://api.github.com/users/octocat) and:
+#
+# Parse the JSON response.
+#
+# Extract and print specific fields (e.g., name, public_repos).
+#
+# Handle any potential errors (e.g., network issues, invalid JSON).
