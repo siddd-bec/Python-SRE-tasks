@@ -1,0 +1,229 @@
+1. Creating Strings
+In Python, a string is a sequence of characters enclosed within:
+
+Single quotes: 'Hello'
+Double quotes: "Hello"
+Triple quotes: '''Hello''' or """Hello"""
+Key Points
+Triple-quoted strings allow multi-line text.
+Strings in Python 3 are Unicode by default.
+Strings are immutable—once created, they cannot be changed in place.
+Examples
+python
+Copy
+Edit
+# Single quotes
+string1 = 'Hello, World!'
+
+# Double quotes
+string2 = "Hello, World!"
+
+# Triple quotes (ideal for multi-line or docstrings)
+string3 = """This is a
+multi-line string."""
+Exercises
+Simple Creation: Create three strings using each type of quotation mark. Print them out to see if there’s any difference in how Python interprets them.
+Multiline: Write a short paragraph using triple quotes and print it to the console.
+2. Accessing Characters
+You can access individual characters in a string by using indexing. In Python:
+
+Positive indices start from 0 at the beginning.
+Negative indices start from -1 at the end.
+Examples
+python
+Copy
+Edit
+text = "Python"
+print(text[0])   # P
+print(text[-1])  # n
+Exercises
+Indexing Practice: Given a string s = "DeepSeek", print:
+
+The first character using a positive index.
+The last character using a negative index.
+Index Out of Range: Try accessing an index that does not exist (e.g., text[10]) to observe the IndexError. Handle this error using a try-except block.
+
+3. Slicing Strings
+Slicing is used to extract a portion (substring) of a string:
+
+string[start:end] returns the substring from start (inclusive) to end (exclusive).
+Omitting start starts from the beginning of the string.
+Omitting end goes until the end of the string.
+You can also specify a step parameter: string[start:end:step].
+Examples
+python
+Copy
+Edit
+text = "Python Programming"
+print(text[0:6])   # Python
+print(text[7:])    # Programming
+print(text[:6])    # Python (same as text[0:6])
+print(text[0:6:2]) # Pto (step of 2)
+Exercises
+Extract Substrings: Given sentence = "Learning Python is fun!", print:
+The word "Learning".
+The word "Python".
+The phrase "is fun!" using slicing.
+Reverse a String: Use slicing with a negative step to reverse a string in one line (string[::-1]).
+4. String Concatenation
+Strings can be combined using the + operator or through other formatting techniques (discussed later).
+
+Examples
+python
+Copy
+Edit
+str1 = "Hello"
+str2 = "World"
+result = str1 + ", " + str2 + "!"
+print(result)  # Hello, World!
+Exercises
+Concatenate User Input: Prompt the user for their first and last name. Concatenate them with a space in between, then print the full name.
+Repeated Strings: Use the * operator to print a string multiple times, for instance: "Hello" * 3.
+5. String Methods
+Python provides numerous built-in methods to manipulate strings. Here are a few common ones:
+
+lower(): Converts the string to lowercase.
+upper(): Converts the string to uppercase.
+strip(): Removes leading and trailing whitespace.
+replace(old, new): Replaces a substring with another.
+split(delimiter): Splits the string into a list based on a delimiter.
+join(iterable): Joins a list (or any iterable) of strings into a single string, using a specified delimiter.
+startswith(substring), endswith(substring): Check if a string starts/ends with a given substring.
+isalpha(), isdigit(), isalnum(), isspace(): Check the nature of the string’s characters.
+Examples
+python
+Copy
+Edit
+text = "  Python Programming  "
+
+print(text.strip())           # "Python Programming"
+print(text.lower())           # "  python programming  "
+print(text.replace("P", "J")) # "  Jython Jrogramming  "
+print(text.split())           # ["Python", "Programming"]
+
+fruits = ["apple", "banana", "cherry"]
+joined_fruits = ", ".join(fruits)
+print(joined_fruits)          # "apple, banana, cherry"
+
+# Check if text starts with a space
+print(text.startswith(" "))   # True
+Exercises
+Method Exploration: Given sample = " Hello, PYTHON 123 ", try out different string methods to:
+Remove whitespace.
+Convert to all uppercase.
+Check if the string is alphanumeric.
+Replace "PYTHON" with "WORLD".
+Joining: Create a list of words and join them with a hyphen (-). Print the resulting string.
+6. String Formatting
+You can format strings using:
+
+f-strings (Python 3.6+): f"Hello, {name}!"
+format() method: "Hello, {}!".format(name)
+% operator (older style): "Hello, %s!" % name
+Examples
+python
+Copy
+Edit
+name = "Alice"
+age = 30
+
+# f-string
+print(f"My name is {name} and I am {age} years old.")
+
+# format() method
+print("My name is {} and I am {} years old.".format(name, age))
+
+# % operator
+print("My name is %s and I am %d years old." % (name, age))
+
+# Using named placeholders with .format()
+print("My name is {n} and I am {a} years old.".format(n=name, a=age))
+Exercises
+Formatting Review: Prompt the user for their name and age, then print out a formatted sentence using each of the three formatting methods.
+Precision Formatting: Format a floating-point number (e.g., 3.14159) to two decimal places using each method.
+7. Escape Characters
+Escape characters allow you to include special characters in strings:
+
+\n: Newline
+\t: Tab
+\\: Backslash
+\": Double quote
+\': Single quote
+Examples
+python
+Copy
+Edit
+print("Hello\nWorld")  # Output:
+# Hello
+# World
+
+print("She said, \"Hello!\"")
+# She said, "Hello!"
+Exercises
+Escaping Quotes: Print a string that includes both single and double quotes (e.g., He said, "It's a beautiful day!").
+Tabs and Newlines: Create a short poem or text snippet that uses \n and \t to format it in an interesting way.
+8. String Membership
+Use the in keyword to check if a substring exists within another string.
+
+Examples
+python
+Copy
+Edit
+text = "Python is fun"
+print("Python" in text)  # True
+print("Java" in text)    # False
+Exercises
+Keyword Search: Ask the user to input a sentence and a keyword. Check if the keyword is in the sentence and print a message accordingly.
+Multiple Keywords: Store a few keywords in a list. Check if any of those keywords appear in a given sentence.
+9. String Length
+Use the len() function to find the length of a string.
+
+Examples
+python
+Copy
+Edit
+text = "Python"
+print(len(text))  # 6
+Exercises
+Length Check: Write a function that takes a string and returns True if the string is longer than 5 characters, and False otherwise.
+Password Strength (Simplicity): Prompt the user for a password and check if its length is at least 8 characters. Print an appropriate message.
+10. Raw Strings
+Raw strings, prefixed with r, treat backslashes as literal characters and do not interpret escape sequences.
+
+Examples
+python
+Copy
+Edit
+path = r"C:\Users\Name\Folder"
+print(path)  # C:\Users\Name\Folder
+Exercises
+File Path: Prompt the user for a Windows file path and store it as a raw string. Print the path to confirm it is displayed correctly.
+Compare Raw vs. Normal: Show how the output differs when using r"..." vs. "..." for paths or text with backslashes.
+11. Additional Tips & Best Practices
+Docstrings: When writing functions, use triple-quoted strings to create docstrings that describe the function’s purpose and usage.
+String Immutability: If you need to modify a string frequently (e.g., many concatenations in a loop), consider using a list or a StringIO object for efficiency, then convert back to a string at the end.
+Unicode: Python 3 strings are Unicode-based, which makes it easier to work with characters in different languages. Just be aware of encoding/decoding if interfacing with external systems.
+String Testing Methods: Familiarize yourself with methods like .isdigit(), .isalpha(), .isalnum(), .isspace(), .islower(), .isupper(), etc., as they are very handy for input validation.
+Putting It All Together
+Try creating a small program that:
+
+Asks for user input (name, age, a short description).
+Uses string methods to:
+Strip extra spaces.
+Capitalize or format the input in some way.
+Checks if certain keywords are present in the description.
+Prints out a nicely formatted summary using an f-string or the format() method.
+This exercise will help you reinforce:
+
+Input handling
+String slicing, indexing
+String methods and membership
+Formatting and printing
+
+
+
+
+
+
+
+
