@@ -1,0 +1,317 @@
+1. Functions
+A function is a block of reusable code that performs a specific task. Functions are defined using the def keyword in Python.
+
+Syntax:
+python
+Copy
+def function_name(parameters):
+    # Function body
+    return result
+Example:
+python
+Copy
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8
+Exercise:
+Write a function called multiply that takes two numbers as input and returns their product.
+
+2. Lambda Functions
+Lambda functions are small, anonymous functions defined using the lambda keyword. They are often used for short, simple operations.
+
+Syntax:
+python
+Copy
+lambda arguments: expression
+Example:
+python
+Copy
+add = lambda a, b: a + b
+print(add(3, 5))  # Output: 8
+Exercise:
+Write a lambda function that takes a number and returns its square.
+
+3. Filter
+The filter() function is used to filter elements from an iterable (like a list) based on a condition. It returns an iterator.
+
+Syntax:
+python
+Copy
+filter(function, iterable)
+Example:
+python
+Copy
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4, 6]
+Exercise:
+Use filter() to extract all the vowels from the string "Hello World".
+
+4. Map
+The map() function applies a given function to all items in an iterable and returns an iterator.
+
+Syntax:
+python
+Copy
+map(function, iterable)
+Example:
+python
+Copy
+numbers = [1, 2, 3, 4]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16]
+Exercise:
+Use map() to convert a list of temperatures in Celsius [0, 10, 20, 30] to Fahrenheit. The formula is: F = (C * 9/5) + 32.
+
+5. *args and **kwargs
+*args is used to pass a variable number of non-keyword arguments to a function.
+
+**kwargs is used to pass a variable number of keyword arguments to a function.
+
+Example:
+python
+Copy
+def my_function(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+my_function(1, 2, 3, name="Alice", age=25)
+# Output:
+# Positional arguments: (1, 2, 3)
+# Keyword arguments: {'name': 'Alice', 'age': 25}
+Exercise:
+Write a function called print_details that accepts *args for names and **kwargs for additional details (e.g., age, city). Print the names and details in a formatted way.
+
+Exercises Recap:
+Functions: Write a function called multiply that takes two numbers as input and returns their product.
+
+Lambda: Write a lambda function that takes a number and returns its square.
+
+Filter: Use filter() to extract all the vowels from the string "Hello World".
+
+Map: Use map() to convert a list of temperatures in Celsius [0, 10, 20, 30] to Fahrenheit.
+
+*args and **kwargs: Write a function called print_details that accepts *args for names and **kwargs for additional details (e.g., age, city). Print the names and details in a formatted way.
+
+Solutions:
+1. Functions:
+python
+Copy
+def multiply(a, b):
+    return a * b
+
+print(multiply(4, 5))  # Output: 20
+2. Lambda:
+python
+Copy
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
+3. Filter:
+python
+Copy
+vowels = list(filter(lambda x: x.lower() in 'aeiou', "Hello World"))
+print(vowels)  # Output: ['e', 'o', 'o']
+4. Map:
+python
+Copy
+celsius = [0, 10, 20, 30]
+fahrenheit = list(map(lambda c: (c * 9/5) + 32, celsius))
+print(fahrenheit)  # Output: [32.0, 50.0, 68.0, 86.0]
+5. *args and **kwargs:
+python
+Copy
+def print_details(*args, **kwargs):
+    for name in args:
+        print(f"Name: {name}")
+    for key, value in kwargs.items():
+        print(f"{key.capitalize()}: {value}")
+
+print_details("Alice", "Bob", age=25, city="New York")
+# Output:
+# Name: Alice
+# Name: Bob
+# Age: 25
+# City: New York
+Let me know if you need further clarification or additional exercises! 😊
+
+provide 10-12 python function exercises to cover concepts along with explanation and solutions
+Here are 10-12 Python function exercises that cover a variety of concepts, including basic functions, lambda, map, filter, *args, **kwargs, and more. Each exercise includes an explanation and a solution.
+
+Exercise 1: Basic Function
+Write a function called greet that takes a name as input and returns a greeting message like "Hello, [name]!".
+
+Solution:
+python
+Copy
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!
+Exercise 2: Function with Default Arguments
+Write a function called power that takes two arguments: a number and an exponent (default value 2). The function should return the number raised to the given exponent.
+
+Solution:
+python
+Copy
+def power(number, exponent=2):
+    return number ** exponent
+
+print(power(3))       # Output: 9 (3^2)
+print(power(3, 3))    # Output: 27 (3^3)
+Exercise 3: Lambda Function
+Write a lambda function that takes two numbers and returns their sum.
+
+Solution:
+python
+Copy
+add = lambda a, b: a + b
+print(add(5, 3))  # Output: 8
+Exercise 4: Using map()
+Given a list of numbers, use map() to create a new list where each number is squared.
+
+Solution:
+python
+Copy
+numbers = [1, 2, 3, 4]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # Output: [1, 4, 9, 16]
+Exercise 5: Using filter()
+Given a list of numbers, use filter() to create a new list containing only the even numbers.
+
+Solution:
+python
+Copy
+numbers = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # Output: [2, 4, 6]
+Exercise 6: Function with *args
+Write a function called sum_all that takes any number of arguments and returns their sum.
+
+Solution:
+python
+Copy
+def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3))        # Output: 6
+print(sum_all(10, 20, 30, 40))  # Output: 100
+Exercise 7: Function with **kwargs
+Write a function called print_info that takes **kwargs and prints each key-value pair in a formatted way.
+
+Solution:
+python
+Copy
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="Alice", age=25, city="New York")
+# Output:
+# name: Alice
+# age: 25
+# city: New York
+Exercise 8: Combining *args and **kwargs
+Write a function called print_details that accepts *args for names and **kwargs for additional details. Print the names and details in a formatted way.
+
+Solution:
+python
+Copy
+def print_details(*args, **kwargs):
+    for name in args:
+        print(f"Name: {name}")
+    for key, value in kwargs.items():
+        print(f"{key.capitalize()}: {value}")
+
+print_details("Alice", "Bob", age=25, city="New York")
+# Output:
+# Name: Alice
+# Name: Bob
+# Age: 25
+# City: New York
+Exercise 9: Recursive Function
+Write a recursive function called factorial that calculates the factorial of a number.
+
+Solution:
+python
+Copy
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+Exercise 10: Function with List Comprehension
+Write a function called square_list that takes a list of numbers and returns a new list with each number squared, using list comprehension.
+
+Solution:
+python
+Copy
+def square_list(numbers):
+    return [x ** 2 for x in numbers]
+
+print(square_list([1, 2, 3, 4]))  # Output: [1, 4, 9, 16]
+Exercise 11: Function with Nested Functions
+Write a function called outer that contains a nested function called inner. The inner function should return the square of a number, and the outer function should call inner and return its result.
+
+Solution:
+python
+Copy
+def outer(number):
+    def inner(x):
+        return x ** 2
+    return inner(number)
+
+print(outer(5))  # Output: 25
+Exercise 12: Function with Docstrings
+Write a function called divide that takes two numbers and returns their division. Add a docstring to explain what the function does.
+
+Solution:
+python
+Copy
+def divide(a, b):
+    """
+    This function takes two numbers, a and b, and returns the result of a divided by b.
+    """
+    return a / b
+
+print(divide(10, 2))  # Output: 5.0
+print(divide.__doc__)  # Output: This function takes two numbers, a and b, and returns the result of a divided by b.
+Exercise 13: Function with Error Handling
+Write a function called safe_divide that takes two numbers and returns their division. Handle the case where the denominator is zero by returning "Cannot divide by zero."
+
+Solution:
+python
+Copy
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Cannot divide by zero."
+
+print(safe_divide(10, 2))  # Output: 5.0
+print(safe_divide(10, 0))  # Output: Cannot divide by zero.
+Exercise 14: Function with Generators
+Write a function called generate_squares that takes a number n and yields the squares of numbers from 1 to n.
+
+Solution:
+python
+Copy
+def generate_squares(n):
+    for i in range(1, n + 1):
+        yield i ** 2
+
+for square in generate_squares(5):
+    print(square)
+# Output:
+# 1
+# 4
+# 9
+# 16
+# 25
+Let me know if you need further clarification or additional exercises! 😊
+
+New chat
+Message DeepSeek
