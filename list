@@ -74,3 +74,181 @@ Print the minimum, maximum, and sum of the list.
 '''
 numbers = [5, 2, 9, 1, 5, 6]
 print(sorted(numbers))
+
+
+
+Common List Methods in Python
+Python provides several useful methods for manipulating lists. Below are some of the most commonly used list methods with examples.
+
+List Methods:
+append() - Adds an element to the end of the list.
+
+my_list = [1, 2, 3]
+my_list.append(4)  # [1, 2, 3, 4]
+extend() - Adds all elements of an iterable (e.g., list, tuple) to the end of the list.
+
+my_list = [1, 2, 3]
+my_list.extend([4, 5])  # [1, 2, 3, 4, 5]
+insert() - Inserts an element at a specific index.
+
+my_list = [1, 2, 3]
+my_list.insert(1, 1.5)  # [1, 1.5, 2, 3]
+remove() - Removes the first occurrence of a specific value.
+
+my_list = [1, 2, 3, 2]
+my_list.remove(2)  # [1, 3, 2]
+pop() - Removes and returns the element at a specific index (or the last element if no index is specified).
+
+my_list = [1, 2, 3]
+my_list.pop(1)  # returns 2, list becomes [1, 3]
+sort() - Sorts the list in ascending order (or based on a custom key).
+
+my_list = [3, 1, 2]
+my_list.sort()  # [1, 2, 3]
+reverse() - Reverses the elements of the list in place.
+
+my_list = [1, 2, 3]
+my_list.reverse()  # [3, 2, 1]
+
+
+Exercises:
+Now, let's practice these list methods with some exercises.
+
+Exercise 1: Basic List Operations
+Create a list numbers with the elements [10, 20, 30, 40].
+Use append() to add 50 to the list.
+Use extend() to add [60, 70] to the list.
+Use insert() to add 25 at index 2.
+Use remove() to remove 30 from the list.
+Use pop() to remove the element at index 4 and print the removed element.
+Use sort() to sort the list in ascending order.
+Use reverse() to reverse the list.
+
+Exercise 2: List Manipulation
+Create a list fruits with the elements ["apple", "banana", "cherry"].
+Use append() to add "orange" to the list.
+Use extend() to add ["grape", "kiwi"] to the list.
+Use insert() to add "mango" at index 1.
+Use remove() to remove "banana" from the list.
+Use pop() to remove the last element and print the removed element.
+Use sort() to sort the list in alphabetical order.
+Use reverse() to reverse the list.
+
+Exercise 3: Advanced List Operations
+Create a list mixed with the elements [5, "apple", 3.14, "banana", 42].
+Use append() to add "cherry" to the list.
+Use extend() to add [7, "orange"] to the list.
+Use insert() to add 10 at index 3.
+Use remove() to remove 3.14 from the list.
+Use pop() to remove the element at index 2 and print the removed element.
+Use sort() to sort the list (Hint: This will raise an error because the list contains mixed types. Handle the error gracefully).
+Use reverse() to reverse the list.
+
+Exercise 4: List Operations with User Input
+Create an empty list user_list.
+Ask the user to input 5 numbers and add them to the list using append().
+Ask the user to input another list of 3 numbers and add them to user_list using extend().
+Ask the user to input a number and an index, and use insert() to add the number at the specified index.
+Ask the user to input a number to remove from the list using remove().
+Ask the user to input an index, and use pop() to remove the element at that index and print the removed element.
+Sort the list using sort().
+Reverse the list using reverse().
+
+Exercise 5: List Operations with Strings
+Create a list words with the elements ["hello", "world", "python", "programming"].
+Use append() to add "language" to the list.
+Use extend() to add ["is", "fun"] to the list.
+Use insert() to add "awesome" at index 2.
+Use remove() to remove "world" from the list.
+Use pop() to remove the element at index 3 and print the removed element.
+Sort the list using sort().
+Reverse the list using reverse().
+Solutions:
+Below are the solutions for the exercises.
+
+Solution 1: Basic List Operations
+python
+Copy
+Edit
+numbers = [10, 20, 30, 40]
+numbers.append(50)
+numbers.extend([60, 70])
+numbers.insert(2, 25)
+numbers.remove(30)
+removed_element = numbers.pop(4)
+print("Removed element:", removed_element)
+numbers.sort()
+numbers.reverse()
+print(numbers)
+Solution 2: List Manipulation
+python
+Copy
+Edit
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+fruits.extend(["grape", "kiwi"])
+fruits.insert(1, "mango")
+fruits.remove("banana")
+removed_element = fruits.pop()
+print("Removed element:", removed_element)
+fruits.sort()
+fruits.reverse()
+print(fruits)
+Solution 3: Advanced List Operations
+python
+Copy
+Edit
+mixed = [5, "apple", 3.14, "banana", 42]
+mixed.append("cherry")
+mixed.extend([7, "orange"])
+mixed.insert(3, 10)
+mixed.remove(3.14)
+removed_element = mixed.pop(2)
+print("Removed element:", removed_element)
+
+try:
+    mixed.sort()
+except TypeError as e:
+    print("Error:", e)
+
+mixed.reverse()
+print(mixed)
+Solution 4: List Operations with User Input
+python
+Copy
+Edit
+user_list = []
+
+for _ in range(5):
+    user_list.append(int(input("Enter a number: ")))
+
+user_list.extend([int(input("Enter another number: ")) for _ in range(3)])
+
+index = int(input("Enter an index: "))
+number = int(input("Enter a number: "))
+user_list.insert(index, number)
+
+number_to_remove = int(input("Enter a number to remove: "))
+user_list.remove(number_to_remove)
+
+index_to_pop = int(input("Enter an index to pop: "))
+removed_element = user_list.pop(index_to_pop)
+print("Removed element:", removed_element)
+
+user_list.sort()
+user_list.reverse()
+print(user_list)
+Solution 5: List Operations with Strings
+python
+Copy
+Edit
+words = ["hello", "world", "python", "programming"]
+words.append("language")
+words.extend(["is", "fun"])
+words.insert(2, "awesome")
+words.remove("world")
+removed_element = words.pop(3)
+print("Removed element:", removed_element)
+words.sort()
+words.reverse()
+print(words)
